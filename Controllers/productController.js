@@ -23,11 +23,11 @@ export const getallProduct = async (req, res) => {
 export const updateProduct = async (req, res) => { 
     try {
       const productId = req.params.id;
-      const { name, description, price, stock, image } = req.body;
+      const { name, description, price, category, image } = req.body;
       
       const updateProduct = await Product.findByIdAndUpdate(
         productId,
-        { name, description, price, stock, image },
+        { name, description, price,category, image },
         { new: true }
       );
   
